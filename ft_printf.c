@@ -6,7 +6,7 @@
 /*   By: abelhadj <abelhadj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/05 16:28:26 by abelhadj          #+#    #+#             */
-/*   Updated: 2022/11/06 14:04:35 by abelhadj         ###   ########.fr       */
+/*   Updated: 2022/11/06 15:32:07 by abelhadj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	ft_percent_check(char format, va_list args, int *len)
 	else if (format == 'd' || format == 'i')
 		ft_putnbr(va_arg(args, int), len);
 	else if (format == 'x' || format == 'X')
-		ft_puthex(va_arg(args, int), format, len);
+		ft_putnbr_hex(va_arg(args, int), format, len);
 	else if (format == '%')
 		ft_putchar(format, len);
 	else if (format == 'u')
