@@ -6,7 +6,7 @@
 /*   By: abelhadj <abelhadj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/05 16:28:26 by abelhadj          #+#    #+#             */
-/*   Updated: 2022/11/06 15:32:07 by abelhadj         ###   ########.fr       */
+/*   Updated: 2022/11/07 19:38:14 by abelhadj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,12 +41,12 @@ int	ft_printf(const char *format, ...)
 	i = 0;
 	while (format[i])
 	{
-		if (format[i] == '%')
+		if (format[i] == '%' && format[i + 1])
 		{
 			i++;
 			ft_percent_check(format[i], args, &len);
 		}
-		else
+		else if (format[i] != '%')
 			ft_putchar(format[i], &len);
 		i++;
 	}

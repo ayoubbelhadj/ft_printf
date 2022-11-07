@@ -6,7 +6,7 @@
 #    By: abelhadj <abelhadj@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/31 21:55:57 by abelhadj          #+#    #+#              #
-#    Updated: 2022/11/06 15:31:43 by abelhadj         ###   ########.fr        #
+#    Updated: 2022/11/07 12:52:43 by abelhadj         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,8 +28,8 @@ all : $(NAME)
 $(NAME) : $(OBG)
 	$(ARC) $(NAME) $(OBG)
 
-%.o : %.c 
-	$(CC) $(FLAGS) -c $<
+%.o : %.c ft_printf.h
+	$(CC) $(FLAGS) -o $@ -c $<
 
 fclean :
 	rm -f $(NAME) $(OBG)
@@ -38,3 +38,5 @@ clean :
 	rm -f $(OBG)
 
 re : fclean all 
+
+.PHONY: re fclean clean all
